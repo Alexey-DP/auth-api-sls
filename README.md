@@ -10,7 +10,7 @@ Init dependencies:
 
 Create `.env` file and add:
 
-`SERVER_PORT=<server port>`
+`PORT=<server port>`
 
 `PG_HOST=<postgres host>`
 
@@ -31,3 +31,13 @@ Create `.env` file and add:
 ### Start server
 
 `npm start`
+
+### API routes:
+
+`POST $/auth/sign-up` - users registration
+
+`POST $/auth/sign-in` - login
+
+`GET $/me` - users info (must be authorization header)
+
+`GET $/country` - users ip/country

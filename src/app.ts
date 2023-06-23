@@ -18,7 +18,7 @@ export class App {
     private readonly exceptionFilter: ExceptionFilter
   ) {
     this.app = express();
-    this.port = Number(process.env.SERVER_PORT) || 5005;
+    this.port = Number(process.env.PORT) || 5005;
   }
 
   private useMiddleware(): void {

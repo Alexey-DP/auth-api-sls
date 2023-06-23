@@ -4,10 +4,8 @@ import { usersController } from "../controllers/usersController";
 
 const usersRouter = Router();
 
-usersRouter.get(
-  "/me",
-  authMiddlewaer,
-  usersController.getMyInfo.bind(usersController)
-);
+usersRouter
+  .get("/me", authMiddlewaer, usersController.getMyInfo.bind(usersController))
+  .get("/country", usersController.getUsersCountryByIp.bind(usersController));
 
 export default usersRouter;

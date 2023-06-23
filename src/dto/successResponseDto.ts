@@ -1,13 +1,11 @@
 import { IAuthRes } from "../interfaces/authRes.interface";
-import { IAccessRefreshTokens } from "../interfaces/accessRefreshTokens.interface";
-import { IUser } from "../interfaces/user.interface";
 import { IMyInfo } from "../interfaces/myInfo.interface";
+import { ICountryIp } from "../interfaces/ips.interface";
 
 export class SuccessResDto {
-  success: boolean;
-  data: IAuthRes | IMyInfo;
-  constructor(data: IAuthRes | IMyInfo) {
-    this.success = true;
+  success = true;
+  data: IAuthRes | IMyInfo | ICountryIp;
+  constructor(data: IAuthRes | IMyInfo | ICountryIp) {
     this.data = data;
   }
 }
