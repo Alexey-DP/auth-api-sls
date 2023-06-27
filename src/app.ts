@@ -22,12 +22,13 @@ export class App {
   }
 
   private useMiddleware(): void {
-    this.app.use(express.json());
+    this.app.use(express.json({ limit: "1mb" }));
   }
 
   private useRoutes(): void {
     this.app.use("/", this.routers.usersRouter);
     this.app.use("/auth", this.routers.authRouter);
+    this.app.use("/store_bucket", this.routers.storeRouter);
   }
 
   private useExeptionFilters(): void {

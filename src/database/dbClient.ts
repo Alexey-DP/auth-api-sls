@@ -16,6 +16,13 @@ export class PgClient {
                         "email" VARCHAR(100) NOT NULL,
                         "password" VARCHAR(100) NOT NULL
                         );`);
+
+    await this.client.query(`CREATE TABLE IF NOT EXISTS "store_bucket" (
+                        "id" uuid DEFAULT uuid_generate_v4 () PRIMARY KEY,
+                        "link" VARCHAR(100) NOT NULL UNIQUE,
+                        "part_first" TEXT,
+                        "part_last" TEXT
+                        );`);
   }
 }
 

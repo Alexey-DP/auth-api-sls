@@ -41,3 +41,7 @@ Create `.env` file and add:
 `GET $/me` - users info (must be authorization header)
 
 `GET $/country` - users ip/country
+
+`PUT $/store_bucket/:link` - put JSON data to store
+
+`PUT $/store_bucket/:link` - get JSon data from store
