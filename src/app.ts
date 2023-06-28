@@ -29,6 +29,7 @@ export class App {
     this.app.use("/", this.routers.usersRouter);
     this.app.use("/auth", this.routers.authRouter);
     this.app.use("/store_bucket", this.routers.storeRouter);
+    this.app.use("/short", this.routers.shortLinkRouter);
   }
 
   private useExeptionFilters(): void {

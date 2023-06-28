@@ -23,6 +23,12 @@ export class PgClient {
                         "part_first" TEXT,
                         "part_last" TEXT
                         );`);
+
+    await this.client.query(`CREATE TABLE IF NOT EXISTS "short_links" (
+                        "id" uuid DEFAULT uuid_generate_v4 () PRIMARY KEY,
+                        "short_path" VARCHAR(100) NOT NULL UNIQUE,
+                        "original_link" TEXT NOT NULL
+                        );`);
   }
 }
 
